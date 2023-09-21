@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+## React useWebWorker hook
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Author: `Andrzej Kowal`.
+
 ## Available Scripts
 
-In the project directory, you can run:
+To check how it actually works - just run `yarn start` or `npm start`. After open Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm start`
+There also will be some console.log calls, som open the browser console too.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What's going on?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The article:
+https://dev.to/sumankalia/web-workers-in-reactjs-4bc7
 
-### `npm test`
+It's an example (basic) implementation of hook `useWebWorker` which can be used to run worker inside of the React component. Hook also will handle `running` state, `error` and the final worker execution `result`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Worker script: `src/worker/script.ts`.
 
-### `npm run build`
+useWebWorker hook: `src/worker/useWebWorker.ts`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Helpful utility for creating new Worker instance: `src/worker/webWorker.ts`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+There are also some pure components in `components` directory. They only display some data based on props.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Everything connected in single place: `src/App.tsx`
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Let me know what do you think in the comments here:
+https://dev.to/sumankalia/web-workers-in-reactjs-4bc7
