@@ -47,6 +47,7 @@ export const App = () => {
       />
 
       {/* Pure component for displaying users list */}
+      {/* Displaying first 20 items */}
       <UsersList data={result} loading={running} error={error} />
     </div>
   );

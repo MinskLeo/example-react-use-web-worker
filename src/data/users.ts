@@ -11,7 +11,7 @@ export interface IUser {
 export const getFakeUsers = (): IUser[] => {
   const users = [];
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 750000; i++) {
     let id = i + 1;
     let name = faker.person.fullName();
     let email = faker.internet.email();

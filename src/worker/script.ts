@@ -17,19 +17,19 @@ export default () => {
     try {
       const { users, type } = e.data;
 
+      console.time("Worker run");
+
       let result: IUser[] = [];
       if (type === "asc") {
         result = users.sort((a, b) => a.commentCount - b.commentCount);
       } else {
         result = users.sort((a, b) => b.commentCount - a.commentCount);
       }
+      console.timeEnd("Worker run");
 
-      // Timeout just for simplicity - there can be any time consuming, intensive work.
-      setTimeout(() => {
-        postMessage({ result } as IWorkerResponse);
-      }, 3000);
+      return postMessage({ result } as IWorkerResponse);
     } catch (error) {
-      postMessage({ error } as IWorkerResponse);
+      return postMessage({ error } as IWorkerResponse);
     }
   });
 };

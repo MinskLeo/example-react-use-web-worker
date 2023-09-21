@@ -21,7 +21,7 @@ export const UsersList: React.FC<IUsersListProps> = ({
 
   return (
     <>
-      {data.map((item) => (
+      {data.slice(0, 20).map((item) => (
         <p style={{ marginBottom: 12 }} key={item.id}>
           {`id: ${item.id} --- comments: ${item.commentCount} --- email: ${item.email}`}
         </p>
